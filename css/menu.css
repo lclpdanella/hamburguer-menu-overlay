@@ -42,6 +42,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    transition: all 0.4s ease;
 }
 
 /* Hamburguer Lines - Top and Bottom */
@@ -58,4 +59,23 @@
 
 .menu-wrap .hamburguer > div::after{
     top: 10px;
+}
+
+/* Toggler animation */
+.menu-wrap .toggler:checked + .hamburguer > div {
+    transform: rotate(135deg);
+}
+
+
+/* Turns Lines into X*/
+.menu-wrap .toggler:checked + .hamburguer > div:before,
+.menu-wrap .toggler:checked + .hamburguer > div:after
+{
+    top: 0;
+    transform: rotate(90deg);
+}
+
+/* Rotate on Hover */
+.menu-wrap .toggler:checked:hover + .hamburguer > div {
+    transform: rotate(225deg);
 }
